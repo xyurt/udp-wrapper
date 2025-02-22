@@ -4,7 +4,7 @@ int CreateServerAddressStruct(const char *ip, unsigned short port, struct sockad
 	memset(server_addr, 0, sizeof(*server_addr));
 	server_addr->sin_family = AF_INET;
 	server_addr->sin_port = htons(port);
-	int result = InetPton(AF_INET, ip, &server_addr->sin_addr.s_addr);
+	int result = InetPtonA(AF_INET, ip, &server_addr->sin_addr.s_addr);
 	if (result != 1) return -1;
 	return result;
 }
