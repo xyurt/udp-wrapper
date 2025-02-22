@@ -66,7 +66,7 @@ int udp_send_quick_temp_sock(const char *ip, unsigned short port, const char *bu
 
 int udp_receive(SOCKET sock, const struct sockaddr_in *from, char *out, size_t outsize) {
 	int fromlen = sizeof(*from);
-	return recvfrom(sock, out, outsize, MSG_WAITALL, (struct sockaddr *)from, &fromlen);
+	return recvfrom(sock, out, outsize, 0, (struct sockaddr *)from, &fromlen);
 }
 int udp_receive_temp_sock(const struct sockaddr_in *from, char *out, size_t outsize) {
 	SOCKET sock = udp_create_socket();
