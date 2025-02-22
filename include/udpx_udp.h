@@ -1,8 +1,9 @@
 #pragma once
 
 #ifdef _WIN32 
-	#include <winsock2.h>
-	#include <windows.h>
+	#include <WinSock2.h>
+	#include <Windows.h>
+	#include <WS2tcpip.h>
 #else
 	#include <unistd.h>
 	#include <arpa/inet.h>
